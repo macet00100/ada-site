@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$ADA on Sol – Official Style Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Poppins:wght@700;900&family=Montserrat:wght@700;900&family=Fredoka:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0F0F1A;
+      --text-light: #E0E0E0;
+      --text-secondary: #A0AEC0;
+      --primary-purple: #9945FF;
+      --accent-magenta: #D946EF;
+      --cyan-pop: #00F0FF;
+      --warm-brown: #8B7355;
+      --warm-beige: #D4A373;
+      --soft-pink: #FBB6CE;
+      --deep-purple: #7C3AED;
+      --gradient-sol: linear-gradient(135deg, #9945FF, #00F0FF);
+      --gradient-fun: linear-gradient(135deg, #7C3AED, #D946EF, #FBB6CE);
+      --gradient-warm: linear-gradient(135deg, #8B7355, #D4A373);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    nav {
+      background: rgba(15,15,26,0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 15px 0;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-nav img { height: 50px; }
+    .nav-links a {
+      color: var(--cyan-pop);
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    header {
+      background: var(--gradient-sol);
+      padding: 140px 20px 100px;
+      text-align: center;
+      position: relative;
+    }
+    header img.hero-logo {
+      max-width: 420px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      background: linear-gradient(to right, white, #00F0FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 100px 0; }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--primary-purple);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .colors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+    }
+    .color-card {
+      padding: 50px 20px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .color-card:hover { transform: scale(1.05); }
+
+    .typography-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+    }
+    .font-demo {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(153,69,255,0.3);
+    }
+    .font-demo h3 { margin-bottom: 15px; color: var(--accent-magenta); }
+
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .asset-card {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid var(--primary-purple);
+    }
+    .asset-card img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .image-example {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      border: 3px solid var(--primary-purple);
+    }
+    .image-example img { width: 100%; height: auto; display: block; }
+
+    .paw-divider {
+      text-align: center;
+      font-size: 4rem;
+      margin: 80px 0 40px;
+      color: var(--accent-magenta);
+    }
+
+    .guidelines-list {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      list-style: none;
+    }
+    .guidelines-list li {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 18px;
+    }
+    .guidelines-list li:before {
+      content: '🐾';
+      position: absolute;
+      left: 0;
+      color: var(--cyan-pop);
+    }
+    .guidelines-list strong { color: var(--cyan-pop); }
+
+    footer {
+      background: #0A0A12;
+      padding: 80px 20px;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      border-top: 1px solid rgba(153,69,255,0.2);
+    }
+    .disclaimer {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+    a { color: var(--cyan-pop); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="logo-nav">
+        <img src="http://adaonsol.com/images/adalogo.png" alt="$ADA Logo">
+      </div>
+      <div class="nav-links">
+        <a href="#colors">Colors</a>
+        <a href="#typography">Typography</a>
+        <a href="#assets">Assets</a>
+        <a href="#imagery">Imagery</a>
+        <a href="#promotion">Promotion</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <img src="http://adaonsol.com/images/top.png" class="hero-logo" alt="Official $ADA Header Logo">
+      <h1>$ADA on Sol</h1>
+      <p style="font-size: 2rem; font-weight: 700; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Toly’s Dog on Solana • Official Style Guide
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section id="colors">
+      <h2>Expanded Color Palette</h2>
+      <div class="colors-grid">
+        <div class="color-card" style="background: #9945FF;">Primary Purple<br><strong>#9945FF</strong></div>
+        <div class="color-card" style="background: #7C3AED;">Deep Purple<br><strong>#7C3AED</strong></div>
+        <div class="color-card" style="background: #D946EF;">Accent Magenta<br><strong>#D946EF</strong></div>
+        <div class="color-card" style="background: #00F0FF; color:#000;">Solana Cyan<br><strong>#00F0FF</strong></div>
+        <div class="color-card" style="background: #FBB6CE; color:#000;">Soft Pink<br><strong>#FBB6CE</strong></div>
+        <div class="color-card" style="background: #8B7355;">Warm Dog Fur<br><strong>#8B7355</strong></div>
+        <div class="color-card" style="background: #D4A373;">Beige Highlight<br><strong>#D4A373</strong></div>
+        <div class="color-card" style="background: #0F0F1A; border:2px solid #444;">Dark BG<br><strong>#0F0F1A</strong></div>
+        <div class="color-card" style="background: linear-gradient(135deg,#9945FF,#00F0FF);">Solana Gradient</div>
+        <div class="color-card" style="background: linear-gradient(135deg,#7C3AED,#D946EF,#FBB6CE);">Fun Gradient</div>
+      </div>
+    </section>
+
+    <div class="paw-divider">🐾</div>
+
+    <section id="typography">
+      <h2>Typography System</h2>
+      <div class="typography-grid">
+        <div class="font-demo">
+          <h3 style="font-family:'Montserrat',sans-serif; font-size:3rem;">Montserrat (Headings & Titles)</h3>
+          <p style="font-size:1.4rem;">$ADA – TOLY’S DOG ON SOLANA</p>
+          <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">↓ Download Montserrat</a>
+        </div>
+        <div class="font-demo">
+          <h3 style="font-family:'Poppins',sans-serif; font-size:3rem;">Poppins (Bold Headlines)</h3>
+          <p style="font-size:1.4rem;">Join the Wolf Pack</p>
+          <a href="https://fonts.google.com/specimen/Poppins" target="_blank">↓ Download Poppins</a>
+        </div>
+        <div class="font-demo">
+          <h3 style="font-family:'Inter',sans-serif; font-size:2.2rem;">Inter (Body & Readability)</h3>
+          <p>14–16px body text for all PDFs and web content.</p>
+          <a href="https://fonts.google.com/specimen/Inter" target="_blank">↓ Download Inter</a>
+        </div>
+        <div class="font-demo">
+          <h3 style="font-family:'Fredoka',sans-serif; font-size:2.4rem; color:var(--accent-magenta);">Fredoka (Playful Accents & Memes)</h3>
+          <p>Perfect for quotes, dog puns, and community calls.</p>
+          <a href="https://fonts.google.com/specimen/Fredoka" target="_blank">↓ Download Fredoka</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="paw-divider">🐾</div>
+
+    <section id="assets">
+      <h2>Official Brand Assets & Logos</h2>
+      <div class="assets-grid">
+        <div class="asset-card">
+          <img src="http://adaonsol.com/images/top.png" alt="Top Header Logo">
+          <p><strong>top.png</strong><br>Header / Hero use</p>
+          <a href="http://adaonsol.com/images/top.png" download>↓ Download</a>
+        </div>
+        <div class="asset-card">
+          <img src="http://adaonsol.com/images/adalogo.png" alt="Core Ada Logo">
+          <p><strong>adalogo.png</strong><br>Primary branding</p>
+          <a href="http://adaonsol.com/images/adalogo.png" download>↓ Download</a>
+        </div>
+        <div class="asset-card">
+          <img src="http://adaonsol.com/images/bottom.png" alt="Bottom Footer Graphic">
+          <p><strong>bottom.png</strong><br>Footer / Section dividers</p>
+          <a href="http://adaonsol.com/images/bottom.png" download>↓ Download</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="paw-divider">🐾</div>
+
+    <section id="imagery">
+      <h2>Imagery Guidelines (Real Shelter Dogs & Authentic Only)</h2>
+      <p style="text-align:center; max-width:900px; margin:0 auto 50px; font-size:1.2rem;">
+        Exclusively use real shelter dog photos from the adaonsol.com Gallery, official logos, or professionally commissioned artist illustrations.<br>
+        <strong>No AI-generated content, no stock photos, no generic vectors.</strong><br>
+        These gallery images showcase real rescue dogs – use them for emotional impact, adoption spotlights, and charity-focused content.
+      </p>
+      <div class="images-grid">
+        <div class="image-example"><img src="https://adaonsol.com/images/dog1.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog2.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog3.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog4.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog5.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog6.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog7.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog8.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog9.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog10.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+        <div class="image-example"><img src="https://adaonsol.com/images/dog11.jpg" alt="Real shelter dog from $ADA Gallery"></div>
+      </div>
+      <p style="text-align:center; font-size:1rem; color:var(--text-secondary); margin-top:40px;">
+        Treat these images with care: natural lighting, emotional expressions, no heavy filters. Crop to focus on the dog’s face/eyes for maximum heart connection. Pair with captions like “Meet this sweet rescue – inspired by Ada! #AdaWolfPack”
+      </p>
+    </section>
+
+    <div class="paw-divider">🐾</div>
+
+    <section id="promotion">
+      <h2>Promotion & Content Creation Guidelines</h2>
+      <p style="text-align:center; max-width:900px; margin:0 auto 40px; font-size:1.2rem;">
+        To honor Ada and keep the project professional—especially with eyes like Toly's on us—focus on authentic, heartfelt content. Our narrative—celebrating a real shelter dog and supporting animal welfare—is powerful on its own. Promote $ADA by emphasizing community, charity, and fun without shortcuts.
+      </p>
+      <ul class="guidelines-list">
+        <li><strong>Heartfelt & Original Content:</strong> Create posts, graphics, and promotions that come straight from the heart. Share personal stories about shelter dogs, why Ada inspires you, or how the community can help real animals. Avoid anything that feels lazy or generic—our story is too good for that.</li>
+        <li><strong>No AI-Generated Material:</strong> Do not use AI for images, lyrics, posts, or any content related to Ada. We're investing in real artists to keep things clean, professional, and true to the spirit. AI often doesn't capture Ada's essence and can make us look unprofessional. Stick to hand-crafted or real photos/art.</li>
+        <li><strong>Professional Presentation:</strong> Everything we post or share should look legit and high-quality. Use only the official logos (top.png, adalogo.png, bottom.png) and assets from adaonsol.com. Avoid generic crypto/stock imagery that doesn't represent Ada authentically.</li>
+        <li><strong>Acceptable Topics to Promote:</strong> Highlight Ada's story, shelter dog adoptions, donations to animal welfare, fun memes tied to real Solana vibes, #AdaWolfPack community actions, and Toly's original tweets. Encourage bull posts that are sincere—e.g., "Why $ADA reminds me of my own rescue dog and how we're making a difference."</li>
+        <li><strong>How to Do It Better:</strong> Brainstorm from personal passion: Write about walking shelter dogs, sharing adoption success stories, or creative ways to support vets/medicine for animals. Collaborate with artists for custom graphics. If you're on the team (like web/graphics roles), lead with examples that inspire others. Always DYOR and remind folks it's a memecoin for fun, not financial advice.</li>
+        <li><strong>Team Expectations:</strong> As team members listed on the site, set the standard—post stuff that's genuine and elevates the project. If unsure, check with the project lead before sharing in TG or X.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      $ADA is a community memecoin with no intrinsic value or expectation of financial return. There is no formal roadmap or utility. Built for fun, memes, and supporting shelter dogs. Always DYOR. Not affiliated with Solana Labs or Anatoly Yakovenko.
+    </div>
+    <p>Join the pack: <a href="https://x.com/ADAonSolanaCTO" target="_blank">@ADAonSolanaCTO</a> • <a href="https://t.me/ADASOLCTO" target="_blank">Telegram</a></p>
+    <p style="margin-top:30px; font-size:0.9rem;">Style Guide inspired by community – Created for $ADA on Sol 🐶🚀</p>
+  </footer>
+
+</body>
+</html>

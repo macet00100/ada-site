@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADAonSol.com - Toly's Dog on Solana</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="$ADA is a community-driven memecoin on Solana honoring Anatoly Yakovenko's dog Ada. Fair launch on Pump.fun, 2% tax, burned liquidity, revoked authorities. Join the pack and support shelter dogs!">
+    <meta name="keywords" content="$ADA, Toly's Dog, Ada Solana, Solana memecoin, dog coin, ADA CTO, shelter dogs charity">
+    <meta name="author" content="andrew" >
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="$ADA - Toly's Dog on Solana">
+    <meta property="og:description" content="$ADA is a community-driven memecoin on Solana honoring Anatoly Yakovenko's dog Ada. Fair launch on Pump.fun, 2% tax, burned liquidity, revoked authorities. Join the pack and support shelter dogs!">
+    <meta property="og:image" content="images/adalogo.png">
+    <meta property="og:url" content="https://adaonsol.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="$ADA - Toly's Dog on Solana">
+    <meta name="twitter:description" content="$ADA is a community-driven memecoin on Solana honoring Anatoly Yakovenko's dog Ada. Fair launch on Pump.fun, 2% tax, burned liquidity, revoked authorities. Join the pack and support shelter dogs!">
+    <meta name="twitter:image" content="images/adalogo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="icon.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('font.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'CustomFont', 'Grandstander', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .team-flex {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .ca-copy {
+            font-family: monospace;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        .hero-section {
+            position: relative;
+            min-height: 80vh;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .btn-primary {
+            background: #a55eea;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #934cdf;
+        }
+        .navbar {
+            transition: background 0.3s;
+        }
+        .navbar.scrolled {
+            background: rgba(0,0,0,0.85) !important;
+        }
+        .disclaimer-box {
+            background: #000;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+        }
+
+        /* Tweet card base – restored original light style + alignment fix */
+        .tweet-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            border: 1px solid #e1e8ed;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+        }
+        .tweet-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15) !important;
+            transform: translateY(-4px);
+        }
+
+        .card-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 420px;
+        }
+
+        .tweet-mimic-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: #fff;
+            border-bottom: 1px solid #eff3f4;
+        }
+        .tweet-mimic-header img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .tweet-mimic-user {
+            flex: 1;
+        }
+        .tweet-mimic-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #0f1419;
+            display: flex;
+            align-items: center;
+        }
+        .tweet-mimic-handle,
+        .tweet-mimic-time {
+            color: #536471;
+            font-size: 15px;
+        }
+        .tweet-mimic-time {
+            margin-left: auto;
+            font-size: 13px;
+        }
+        .tweet-mimic-x-icon {
+            width: 20px;
+            height: 20px;
+            fill: #536471;
+            margin-left: 12px;
+        }
+
+        .tweet-footer {
+            padding: 12px 16px;
+            border-top: 1px solid #eff3f4;
+            text-align: center;
+            background: white;
+        }
+
+        /* Wolf pack subtle overlay on dog-tweet image only */
+        .wolf-pack-overlay {
+            transition: background 0.4s ease, opacity 0.4s ease;
+        }
+        .tweet-card:hover .wolf-pack-overlay {
+            background: rgba(165, 94, 234, 0.25);
+        }
+        .tweet-card:hover .wolf-pack-overlay::after {
+            content: 'Wolf Pack Activated 🐺';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .wolf-pack-overlay::after {
+            opacity: 0;
+        }
+
+        /* Enhanced image/video wrapper for dynamic feel */
+        .image-wrapper {
+            transition: transform 0.3s ease;
+        }
+        .tweet-card:hover .image-wrapper {
+            transform: scale(1.03);
+        }
+
+        /* Action icons for realism */
+        .tweet-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding: 8px 16px 0;
+            border-top: 1px solid #eff3f4;
+        }
+        .tweet-actions .action {
+            display: flex;
+            align-items: center;
+            color: #536471;
+            font-size: 13px;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+        .tweet-actions .action:hover {
+            color: #1d9bf0;
+        }
+        .tweet-actions .action i {
+            margin-right: 4px;
+            font-size: 16px;
+        }
+
+        /* Video styling for better look */
+        video {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .tweet-card:hover video {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body id="top">
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/adalogo.png" alt="$ADA Logo" height="50">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_1">Home</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_2">Charity</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_3">How to Buy</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_4">Roadmap</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_5">Team</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_6">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link click-scroll" href="#section_7">Buy $ADA</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Socials
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-light">
+                            <li><a class="dropdown-item" href="https://t.me/ADASOLCTO" target="_blank" rel="noopener noreferrer"><i class="bi bi-telegram me-2"></i>Telegram</a></li>
+                            <li><a class="dropdown-item" href="https://x.com/ADAonSolanaCTO" target="_blank" rel="noopener noreferrer"><i class="bi bi-x me-2"></i>X / Twitter</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1" style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center;">
+            <div class="container hero-content">
+                <div class="row justify-content-center text-center text-white">
+                    <div class="col-lg-10 col-12">
+                        <img src="images/top.png" class="img-fluid mb-4" alt="Top Banner">
+                        <h1 class="display-4 fw-bold mb-3">$ADA - Toly's Dog on Solana</h1>
+                        <p class="lead mb-4 text-white">The community memecoin honoring Anatoly Yakovenko's beloved Ada 🐶</p>
+                        <a href="#section_7" class="btn btn-primary btn-lg px-5 py-3">Buy $ADA</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section py-5">
+            <div class="container">
+                <div class="row justify-content-center g-5">
+                    <div class="col-lg-6 col-12">
+                        <div class="custom-block bg-white shadow-lg h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div>
+                                    <h5 class="mb-1">The tweet that started it all</h5>
+                                    <p class="text-muted small">Anatoly Yakovenko's Dog - Ada</p>
+                                </div>
+                                <span class="badge bg-danger rounded-pill ms-auto">$ADA</span>
+                            </div>
+                            <a href="https://x.com/toly/status/1737553278412759503" target="_blank" rel="noopener noreferrer">
+                                <img src="images/tolytweet.png" class="img-fluid rounded" alt="Toly's Tweet">
+                            </a>
+                            <div class="text-center mt-4">
+                                <img src="images/adadog.png" class="img-fluid rounded" alt="Ada - Anatoly Yakovenko's Dog" style="max-width: 80%;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="custom-block custom-block-overlay h-100">
+                            <div class="d-flex flex-column h-100">
+                                <img src="images/sol.jpg" class="custom-block-image img-fluid" alt="Solana">
+                                <div class="custom-block-overlay-text d-flex flex-column justify-content-center p-4">
+                                    <h5 class="text-white mb-3">$ADA - Toly's Dog on Solana</h5>
+                                    <p class="text-white mb-4">
+                                        <strong>Symbol:</strong> $ADA<br>
+                                        <strong>Supply:</strong> 1,000,000,000<br>
+                                        <strong>Chain:</strong> Solana<br>
+                                        <strong>LP:</strong> Burned<br>
+                                        <strong>Mint/Freeze:</strong> Revoked<br>
+                                        <strong>Tolys Supply:</strong> 20%<br><br>
+                                        <strong>CA:</strong><br>
+                                        <span class="ca-copy">skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump</span>
+                                        <button class="btn btn-sm btn-outline-light mt-2" onclick="copyCA()">Copy CA</button>
+                                    </p>
+                                    <div class="d-flex flex-wrap gap-2 mb-4">
+                                        <a href="https://pump.fun/coin/skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump" class="btn custom-btn" target="_blank" rel="noopener noreferrer">Pump.fun</a>
+                                        <a href="https://dexscreener.com/solana/skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump" class="btn custom-btn" target="_blank" rel="noopener noreferrer">DexScreener</a>
+                                        <a href="https://solscan.io/token/skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump" class="btn custom-btn" target="_blank" rel="noopener noreferrer">SolScan</a>
+                                    </div>
+                                    <a href="https://www.geckoterminal.com/solana/pools/skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump" target="_blank" rel="noopener noreferrer">
+                                        <img src="images/gecko.png" alt="Gecko Terminal" class="img-fluid">
+                                    </a>
+                                </div>
+                                <div class="section-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center disclaimer-box">
+                    Disclaimer: $ADA is a memecoin with no intrinsic value or expectation of financial return.<br>There is no roadmap or utility beyond community fun. Invest at your own risk.
+                </div>
+            </div>
+        </section>
+
+        <!-- Original darker full tweet section restored -->
+        <section class="response-section section-padding position-relative" 
+                 style="background-image: url('images/bg.jpg'); background-size: cover; background-position: center; overflow: hidden;">
+
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 200px; 
+                        background: linear-gradient(to bottom, #f8f9fa 0%, rgba(248,249,250,0) 100%); 
+                        z-index: 1; pointer-events: none;"></div>
+
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 200px; 
+                        background: linear-gradient(to top, #f8f9fa 0%, rgba(248,249,250,0) 100%); 
+                        z-index: 1; pointer-events: none;"></div>
+
+            <div class="container position-relative" style="z-index: 2;">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-12">
+                        <div class="tweet-card shadow-lg mx-auto" style="max-width: 900px; background: rgba(0,0,0,0.8); border: 1px solid #2f3336; color: #ffffff; overflow: hidden;">
+                            
+                            <div class="tweet-mimic-header" style="background: #000; border-bottom: 1px solid #2f3336; padding: 12px 16px;">
+                                <img src="images/adaicon.jpg" alt="ADA avatar" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover; margin-right: 12px;">
+                                <div class="tweet-mimic-user">
+                                    <div class="tweet-mimic-name" style="color: #ffffff; font-weight: 700;">ADA on Solana</div>
+                                    <div class="tweet-mimic-handle" style="color: #d0d5da;">@ADAonSolanaCTO</div>
+                                </div>
+                                <div class="tweet-mimic-time" style="margin-left: auto; color: #d0d5da;">· Nov 19, 2023</div>
+                                <svg class="tweet-mimic-x-icon" viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: #d0d5da; margin-left: 12px;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
+
+                            <div class="row g-0">
+                                <div class="col-lg-5 col-12 d-flex align-items-center justify-content-center bg-dark" style="min-height: 400px; padding: 20px;">
+                                    <a href="https://x.com/toly/status/1726281644276105719" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; max-width: 380px; margin: 0 auto;">
+                                        <img src="images/tweet.jpg" class="img-fluid w-100" alt="Toly's Inspiring Tweet" 
+                                             style="border-radius: 16px; overflow: hidden; border: 1px solid #2f3336; box-shadow: 0 2px 12px rgba(0,0,0,0.4); object-fit: contain; background: #000;">
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-7 col-12 d-flex align-items-center">
+                                    <div class="p-4 p-lg-5">
+                                        <p style="font-size: 18px; line-height: 1.6; margin-bottom: 24px; color: #ffffff !important;">
+                                            We read the post and created this project! 🐶<br><br>
+                                            $ADA on Solana was born directly from this moment – Anatoly sharing his love for his shelter dog Ada and lighting the spark for a community tribute.<br><br>
+                                            Honoring Ada forever. Join the pack.
+                                        </p>
+
+                                        <div class="d-flex justify-content-between mt-4 text-light small">
+                                            <span><i class="bi bi-chat"></i> Reply</span>
+                                            <span><i class="bi bi-repeat"></i> Repost</span>
+                                            <span><i class="bi bi-heart"></i> Like</span>
+                                            <span><i class="bi bi-bookmark"></i> Bookmark</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tweet-footer text-center py-3" style="border-top: 1px solid #2f3336; background: #000;">
+                                <a href="https://x.com/toly/status/1726281644276105719" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-light">
+                                    View original on X →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Charity Section -->
+<section class="explore-section section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="mb-4">Learn about ADA's story on X</h2>
+                <p class="lead text-muted mb-5">Sparked by Toly's tweet, a passionate community dedicated to making a real difference.</p>
+            </div>
+        </div>
+        <div class="row g-5">
+
+            <!-- Tweet 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card tweet-card shadow-lg h-100 d-flex flex-column border border-secondary-subtle">
+                    <div class="tweet-mimic-header d-flex align-items-center p-3">
+                        <img src="images/toly.jpg" class="rounded-circle me-3 shadow-sm" width="48" height="48" alt="Toly Yakovenko">
+                        <div>
+                            <div class="tweet-mimic-name" style="color: #0f1419; font-weight: 700;">toly 🇺🇸 <i class="bi bi-patch-check-fill text-primary ms-1" style="font-size: 14px;"></i></div>
+                            <div class="tweet-mimic-handle text-muted small">@Toly</div>
+                        </div>
+                        <div class="ms-auto text-muted small fw-light">· Feb 19, 2026</div>
+                        <svg class="tweet-mimic-x-icon ms-2" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 flex-grow-1 d-flex flex-column">
+                        <p style="font-size: 17px; line-height: 1.5; color: #0f1419; margin-bottom: 1.25rem; font-weight: 400;">
+                            Aaaw 🐶💜<br>
+                            <span style="opacity: 0.85; font-size: 1.1rem;">(the moment that started it all...)</span>
+                        </p>
+                        <div class="image-wrapper rounded-3 overflow-hidden shadow-sm">
+                            <img src="images/dog-tweet.png" class="img-fluid w-100" alt="Heartwarming shelter dog">
+                        </div>
+                    </div>
+                    <div class="p-3 border-top text-center">
+                        <a href="https://x.com/toly/status/2024470896757657962" target="_blank" rel="noopener noreferrer" 
+                           class="btn btn-outline-secondary btn-sm rounded-pill px-4">
+                            View on X →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tweet 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card tweet-card shadow-lg h-100 d-flex flex-column border border-secondary-subtle">
+                    <div class="tweet-mimic-header d-flex align-items-center p-3">
+                        <img src="images/adaicon.jpg" class="rounded-circle me-3 shadow-sm" width="48" height="48" alt="ADAonSolanaCTO">
+                        <div>
+                            <div class="tweet-mimic-name" style="color: #0f1419; font-weight: 700;">ADA <i class="bi bi-patch-check-fill text-primary ms-1" style="font-size: 14px;"></i></div>
+                            <div class="tweet-mimic-handle text-muted small">@ADAonSolanaCTO</div>
+                        </div>
+                        <div class="ms-auto text-muted small fw-light">· Feb 24, 2026</div>
+                        <svg class="tweet-mimic-x-icon ms-2" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 flex-grow-1 d-flex flex-column">
+                        <p style="font-size: 17px; line-height: 1.5; color: #0f1419; margin-bottom: 1.25rem; font-weight: 400;">
+                            We turn $ADA into a true movement by walking shelter dogs.
+                        </p>
+                        <div class="image-wrapper rounded-3 overflow-hidden shadow-sm">
+                            <video controls class="w-100 rounded" style="max-height: 420px; object-fit: cover;">
+                                <source src="http://www.adaonsol.com/video/ada.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top text-center">
+                        <a href="https://x.com/ADAonSolanaCTO/status/2025796573259501775" target="_blank" rel="noopener noreferrer" 
+                           class="btn btn-outline-secondary btn-sm rounded-pill px-4">
+                            View on X →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tweet 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card tweet-card shadow-lg h-100 d-flex flex-column border border-secondary-subtle">
+                    <div class="tweet-mimic-header d-flex align-items-center p-3">
+                        <img src="images/moonormud.jpg" class="rounded-circle me-3 shadow-sm" width="48" height="48" alt="moonormud">
+                        <div>
+                            <div class="tweet-mimic-name" style="color: #0f1419; font-weight: 700;">Top Dog <i class="bi bi-patch-check-fill text-primary ms-1" style="font-size: 14px;"></i></div>
+                            <div class="tweet-mimic-handle text-muted small">@moonormud</div>
+                        </div>
+                        <div class="ms-auto text-muted small fw-light">· Jan 23, 2026</div>
+                        <svg class="tweet-mimic-x-icon ms-2" viewBox="0 0 24 24" width="20" height="20">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </div>
+                    <div class="p-4 flex-grow-1 d-flex flex-column">
+                        <p style="font-size: 17px; line-height: 1.5; color: #0f1419; margin-bottom: 1.25rem; font-weight: 400;">
+                            I went and hooked the dogs in my town up today with some more treats before this big storm hits us.
+                        </p>
+                        <div class="image-wrapper rounded-3 overflow-hidden shadow-sm">
+                            <video controls class="w-100 rounded" style="max-height: 420px; object-fit: cover;">
+                                <source src="http://www.adaonsol.com/video/ada2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="p-3 border-top text-center">
+                        <a href="https://x.com/moonormud/status/2014834241461158034" target="_blank" rel="noopener noreferrer" 
+                           class="btn btn-outline-secondary btn-sm rounded-pill px-4">
+                            View on X →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Optional: keep or remove the big CTA block below depending on your preference -->
+        <!-- If you want even cleaner look, you can delete everything from here down to </section> -->
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-10 col-12">
+                <div class="text-center p-5 rounded-4 shadow-lg bg-light border">
+                    <h3 class="fw-bold mb-4" style="color: #2c3e50;">About Ada's Second Chance Squad</h3>
+                    <p class="lead text-muted mb-4">
+                        Inspired by Anatoly's rescue story, we're turning $ADA into real-world impact: walking dogs, donating food/medicine, funding vet care, and helping shelter pups find forever homes.
+                    </p>
+                    <p class="text-muted mb-4">
+                        Join the movement — share your shelter dog photos, volunteer stories, or donations!<br>
+                        Use <strong>#ADAonSOL</strong> or <strong>#AdaWolfPack</strong>
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <button class="btn btn-primary btn-lg px-5" 
+                                onclick="navigator.clipboard.writeText('#ADAonSOL #AdaWolfPack'); alert('Hashtags copied!');">
+                            Copy Hashtags 🐶
+                        </button>
+                        <a href="https://t.me/ADASOLCTO" target="_blank" class="btn btn-outline-primary btn-lg px-5">
+                            Join Telegram
+                        </a>
+                        <a href="https://x.com/ADAonSolanaCTO" target="_blank" class="btn btn-outline-dark btn-lg px-5">
+                            Follow on X
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- How to Buy -->
+        <section class="timeline-section section-padding" id="section_3">
+            <div class="section-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">How to buy $ADA</h2>
+                    </div>
+                    <div class="col-lg-10 col-12 mx-auto">
+                        <div class="timeline-container">
+                            <ul class="vertical-scrollable-timeline" id="vertical-scrollable-timeline">
+                                <div class="list-progress">
+                                    <div class="inner"></div>
+                                </div>
+                                <li>
+                                    <h4 class="text-white mb-3">Purchase SOL from a reputable exchange:</h4>
+                                    <p class="text-white">Begin by signing up for an account on a trusted cryptocurrency exchange such as Coinbase, Gemini, or Binance. Once your account is verified, deposit fiat currency (like USD) into your exchange account. Navigate to the trading section and buy Solana (SOL) using the deposited funds. Make sure to follow the exchange's guidelines for purchasing SOL, including verification requirements and trading fees.</p>
+                                    <div class="icon-holder">
+                                      <i class="bi-search"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="text-white mb-3">Get the Phantom wallet</h4>
+                                    <p class="text-white">Obtain the Phantom wallet by visiting <a href="https://phantom.app" target="_blank" rel="noopener noreferrer">https://phantom.app</a> or downloading the Phantom wallet app from your device's app store. Follow the prompts to install and set up your wallet. During the setup process, create a strong passphrase and securely store your recovery phrase. Upon completion, you'll receive a unique wallet address associated with your Phantom wallet.</p>
+                                    <div class="icon-holder">
+                                      <i class="bi-bookmark"></i>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h4 class="text-white mb-3">Transfer SOL to your Phantom wallet</h4>
+                                    <p class="text-white">From your exchange account, initiate a withdrawal of SOL to your Phantom wallet address. Confirm the accuracy of the wallet address before proceeding with the withdrawal. After the SOL is successfully transferred to your Phantom wallet, access decentralized exchanges compatible with Solana, such as Jupiter or Raydium, through your Phantom wallet interface. Connect your Phantom wallet to the chosen decentralized exchange and navigate to the trading section. Select the SOL/$ADA trading pair, specify the desired amount of SOL to swap for $ADA tokens, review the transaction details, including gas fees, and confirm the swap. Upon confirmation, the $ADA tokens will be credited to your Phantom wallet.</p>
+                                    <div class="icon-holder">
+                                      <i class="bi-book"></i>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="roadmap-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                        <img src="images/roadmap.png" class="img-fluid rounded" alt="Roadmap">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="timeline-section section-padding" id="section_5">
+            <div class="section-overlay"></div>
+            <div class="container text-center">
+                <h2 class="text-white mb-4">ADA Team</h2>
+                <h6 class="text-white mb-5">Meet the team behind $ADA - Toly's Dog on Solana</h6>
+                <div class="team-flex">
+                    <div class="box person">
+                        <div class="image round">
+                            <a href="https://x.com/moonormud" target="_blank" rel="noopener noreferrer">
+                                <img src="images/bams.jpg" class="rounded-circle" style="width: 250px; height: 250px; object-fit: cover;" alt="Bams">
+                            </a>
+                        </div>
+                        <h3 class="text-white mt-4 mb-2"><a href="https://x.com/moonormud">@Moonormud</a></h3>
+                        <h6 class="text-white">Project Leader</h6>
+                    </div>
+                    <div class="box person">
+                        <div class="image round">
+                            <a href="https://x.com/OldGrowthCrypto" target="_blank" rel="noopener noreferrer">
+                                <img src="images/og.jpg" class="rounded-circle" style="width: 250px; height: 250px; object-fit: cover;" alt="OldGrowthCrypto">
+                            </a>
+                        </div>
+                        <h3 class="text-white mt-4 mb-2"><a href="https://x.com/OldGrowthCrypto">@OldGrowthCrypto</a></h3>
+                        <h6 class="text-white">Web Design / Graphics</h6>
+                    </div>
+                    <div class="box person">
+                        <div class="image round">
+                            <a href="https://x.com/Teecryps_0" target="_blank" rel="noopener noreferrer">
+                                <img src="images/tee.jpg" class="rounded-circle" style="width: 250px; height: 250px; object-fit: cover;" alt="Teecryps">
+                            </a>
+                        </div>
+                        <h3 class="text-white mt-4 mb-2"><a href="https://x.com/Teecryps_0">@Teecryps_0</a></h3>
+                        <h6 class="text-white">Project Manager</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="faq-section section-padding bg-white" id="section_6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <h2 class="mb-4">Frequently Asked Questions</h2>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-lg-5 col-12">
+                        <img src="images/faq_graphic.jpg"  class="img-fluid rounded d-block mx-auto" align="center" alt="FAQs">
+                    </div>
+
+                    <div class="col-lg-6 col-12 m-auto">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is ADA on Solana?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        "ADA on Sol" (often styled as ADA or ADASOL) is a Solana-based memecoin created as a tribute to Ada, the late dog of Solana co-founder Anatoly Yakovenko. Anatoly frequently shared about his dog Ada on social media, making her a beloved figure in the Solana community (RIP Ada). The token honors her memory and her informal role in the "Solana Pack," with proceeds or themes sometimes tied to supporting dog shelters.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Is ADA connected to the Solana founder?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        $ADA is a community tribute to honor Ada's memory, the shelter dog Toly rescued and loved. He holds a portion of the supply through community sends, and our charity work aligns with his wish to help shelter animals. No official endorsement exists, but the story is deeply inspired by his original post.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How can I get involved beyond just holding $ADA?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Join the movement by walking or volunteering at local shelters, donating supplies, or sharing adoption stories online. Follow Ada's Second Chance Squad updates, participate in community spaces, and help spread awareness. Every action supports real impact for shelter dogs in Ada's name.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Buy Section -->
+        <section class="contact-section section-padding section-bg" id="section_7">
+            <div class="container">
+                <div class="row text-center text-white">
+                    <div class="col-12">
+                        <h2 class="mb-4 text-white">Buy $ADA Now</h2>
+                        <p class="lead mb-4 text-white">Anatoly Yakovenko's Dog on Solana!</p>
+                        <h6 class="mb-4">
+                            Contract Address:<br>
+                            <span class="ca-copy">skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump</span><br>
+                            <button class="btn btn-sm btn-outline-light mt-2" onclick="copyCA()">Copy CA</button>
+                        </h6>
+                        <a href="https://jup.ag/swap?sell=So11111111111111111111111111111111111111112&buy=skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump" target="_blank" rel="noopener noreferrer">
+                            <img src="images/jupiter.png" class="img-fluid" style="max-width: 300px;" alt="Jupiter Swap">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.html">
+                        <img src="images/bottom.png" class="img-fluid" alt="ADA">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <ul class="site-footer-links">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">Charity</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">How to Buy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Socials</h6>
+                    <ul class="site-footer-links">
+                        <li><a class="dropdown-item" href="http://www.t.me/ADASOLCTO">Telegram</a></li>
+                        <li><a class="dropdown-item" href="https://x.com/ADAonSolanaCTO">Twitter / X</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden textarea for fallback copy -->
+    <textarea id="hiddenCA" style="position: absolute; left: -9999px;">skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump</textarea>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Twitter/X Embed Script -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script>
+        // Copy CA function with fallback
+        function copyCA() {
+            const text = "skDGuSDyKYGbYTWnMCNcPeDd4vHUxAsMNVVxxUfpump";
+            const textarea = document.getElementById('hiddenCA');
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text)
+                    .then(() => {
+                        alert("CA copied to clipboard!");
+                    })
+                    .catch(err => {
+                        console.error('Clipboard API failed:', err);
+                        fallbackCopy();
+                    });
+            } else {
+                fallbackCopy();
+            }
+
+            function fallbackCopy() {
+                textarea.value = text;
+                textarea.select();
+                textarea.setSelectionRange(0, 99999); // For mobile
+
+                try {
+                    const successful = document.execCommand('copy');
+                    if (successful) {
+                        alert("CA copied to clipboard! (fallback method)");
+                    } else {
+                        alert("Copy failed. Please select and copy manually.");
+                    }
+                } catch (err) {
+                    alert("Copy failed. Please select and copy manually.");
+                    console.error('Fallback copy failed:', err);
+                }
+            }
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                navbar.classList.remove('bg-transparent');
+                navbar.classList.add('bg-dark');
+            } else {
+                navbar.classList.remove('scrolled', 'bg-dark');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+    </script>
+</body>
+</html>
+```
